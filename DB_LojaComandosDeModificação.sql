@@ -1,0 +1,46 @@
+mysql -u root -h localhost -p
+#Gabrielle Carvalho Gonçalves das Neves
+
+CREATE DATABASE Loja;
+USE Loja;
+
+CREATE TABLE Livrarias(
+	IdLivraria INT NOT NULL
+);
+
+CREATE TABLE NotasFiscais(
+	CodigoVenda INT NOT NULL PRIMARY KEY,
+	DataVenda DATETIME NOT NULL,
+	IdLivraria INT NOT NULL
+);
+
+CREATE TABLE ItensNF(
+	CodigoVenda INT NOT NULL,
+	IdLivro INT NOT NULL,
+	QtdeVendida TINYINT NOT NULL
+);
+
+CREATE TABLE Livros(
+	IdLivro INT NOT NULL PRIMARY KEY,
+	Autor VARCHAR(100) NOT NULL
+);
+
+
+ALTER TABLE Livrarias
+ADD COLUMN NomeLivraria VARCHAR(30) NOT NULL,
+ADD COLUMN Endereco VARCHAR(30) NOT NULL,
+ADD COLUMN CNPJ VARCHAR(18) NOT NULL,
+ADD CONSTRAINT Pk_idLivrarias PRIMARY KEY (IdLivraria),
+ADD CONSTRAINT Uk_CNPJ UNIQUE KEY(CNPJ);
+
+ALTER TABLE Livros
+ADD COLUMN TituloLivro VARCHAR(50) NOT NULL AFTER,
+ADD COLUMN PrecoUnitario DOUBLE(5,2) NOT NULL;
+
+ALTER TABLE ItensNF
+ADD CONSTRAINT Pk_CodigoVenda PRIMARY KEY (CodigoVenda,IdLivro),
+ADD CONSTRAINT Fk_CodigoVenda FOREIGN KEY (CodigoVenda)
+REFERENCES NotasFiscais(CodigoVenda),
+ADD CONSTRAINT Fk_IdLivro FOREIGN KEY (IdLivro)
+REFERENCES Livros(IdLivro);
+

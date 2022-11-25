@@ -202,13 +202,41 @@ INSERT INTO Cliente VALUES
 
 #3 Cadastre 10 vendas diferentes, sendo que, em cada venda deve possuir entre 2 a 3 itens diferentes.
 INSERT INTO Venda VALUES
-('400','2010-06-11','5'),
-('401','2010-06-11','1'),
-('402','2010-06-13','3'),
-('403','2010-06-21','2'),
-('404','2010-07-07','7'),
+('1','2010-06-11','5'),
+('2','2010-06-11','1'),
+('3','2010-06-13','4'),
+('4','2010-06-21','2'),
+('5','2010-07-07','7'),
+('6','2010-07-17','8'),
+('7','2010-07-23','7'),
+('8','2010-07-29','10'),
+('9','2010-08-01','9'),
+('10','2010-08-16','2');
 
 INSERT INTO itensVendidos VALUES
-()
-()
-()
+('1','4','1'),
+('1','5','1'),
+('2','90','1'),
+('2','26','3'),
+('3','6','2'),
+('3','21','2'),
+('4','27','4'),
+('4','20','1'),
+('5','25','5'),
+('5','28','5'),
+('6','29','1'),
+('6','27','2'),
+('7','37','2'),
+('7','45','1'),
+('8','54','2'),
+('8','63','3'),
+('9','72','2'),
+('9','81','1'),
+('10','3','5'),
+('10','8','5');
+
+SELECT * FROM clientes WHERE nomecliente LIKE 'j%';
+SELECT * FROM clientes WHERE nomecliente LIKE '%j%';
+SELECT * FROM clientes WHERE nomecliente LIKE '%j';
+SELECT * FROM clientes WHERE nomecliente LIKE '_o%'; 
+SELECT * FROM clientes WHERE nomecliente LIKE '__n%';

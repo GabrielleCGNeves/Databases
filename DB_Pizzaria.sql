@@ -98,4 +98,3 @@ INSERT INTO TB_ItensPedido VALUES
 (4, 1, 5),
 (5, 3, 1),
 (5, 4, 4);
-

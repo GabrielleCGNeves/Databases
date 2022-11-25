@@ -235,8 +235,35 @@ INSERT INTO itensVendidos VALUES
 ('10','3','5'),
 ('10','8','5');
 
+
+#4. Efetue todas as consultas mostradas nesta apresentação em seu banco de dados fipe.
+
+SELECT * FROM Cliente WHERE codCliente <> 4;
+SELECT * FROM Cliente WHERE estado <> 'MG';
+SELECT * FROM Carros WHERE preco >= '10000.00';
+
+
 SELECT * FROM clientes WHERE nomecliente LIKE 'j%';
 SELECT * FROM clientes WHERE nomecliente LIKE '%j%';
 SELECT * FROM clientes WHERE nomecliente LIKE '%j';
 SELECT * FROM clientes WHERE nomecliente LIKE '_o%'; 
 SELECT * FROM clientes WHERE nomecliente LIKE '__n%';
+
+SELECT codVenda, datavenda, nomeCliente 
+FROM venda, cliente
+WHERE venda.codCliente = cliente.codCliente;
+
+SELECT codVenda, datavenda, nomeCliente FROM venda 
+INNER JOIN cliente ON venda.codCliente = cliente.codCliente;
+
+SELECT codCarro, fabricante FROM Carros;
+
+SELECT codCarro AS 'codigo', fabricante FROM Carro;
+
+SELECT carros.codCarros AS 'codigo', carros.fabricante FROM carros;
+
+SELECT carros.codCarros AS 'codigo', carros.fabricante FROM carros AS carros;
+
+SELECT v.codvenda, v.datavenda, c.nomecliente FROM venda AS v 
+INNER JOIN cliente AS c ON v.codcliente = c.codcliente
+ORDER BY v.codVenda;

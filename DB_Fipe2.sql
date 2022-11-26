@@ -1,9 +1,9 @@
 mysql -u root -h localhost -p
-#Gabriel Victor Cepeda
 #Gabrielle Carvalho Gonçalves das Neves
+#Higor Gomes Rocha
 
-CREATE DATABASE File;
-Use File;
+CREATE DATABASE Fipe;
+Use Fipe;
 
 CREATE TABLE Carros(
 	codCarro INT NOT NULL PRIMARY KEY,

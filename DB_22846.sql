@@ -90,8 +90,8 @@ SELECT * FROM TB_Produto WHERE prod_precoUnitario BETWEEN '10.00' AND '50.00';
 
 #8. Realize uma consulta aos pedidos que exiba: CodigoPedido, DataPedido e NomeCliente.
 SELECT ped_codPed, ped_dataPedido, cli_nome FROM TB_Pedido
-INNER JOIN TB_Cliente;
+INNER JOIN TB_Cliente ON TB_Pedido.cli_codCli = TB_Cliente.cli_codCli;
 
 #9. Realize uma consulta aos itens pedidos que exiba: CodigoPedido, NomeProduto, PrecoUnitario e QtdeVendida.
 SELECT ped_codPed, prod_nome, prod_precoUnitario, ite_qtdeVenda FROM TB_ItensPedido
-INNER JOIN TB_Produto;
+INNER JOIN TB_Produto ON TB_ItensPedido.prod_codProd = TB_Produto.prod_codProd;
